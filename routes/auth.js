@@ -1,11 +1,13 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/login', function(req, res, next) {
-  res.send('Página de login');
-});
+var auth = require('../controller/AuthController.js');
 
+/* GET login page. */
+router.get('/login', auth.form);
+
+/* POST login page. */
+router.post('/login', auth.login);
 
 
 module.exports = router;
