@@ -2,6 +2,9 @@ var express = require('express');
 var router = express.Router();
 
 
+var receta = require('../controller/RecetaController.js');
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   console.log(req.query.color1);
@@ -37,9 +40,7 @@ router.get('/ingredientes/*', function(req, res, next) {
 });
 
 /* GET recetas page. */
-router.get('/recetas', function(req, res, next) {
-  res.render('recetas');
-});
+router.get('/recetas', receta.list);
 
 /* GET chefs page. */
 router.get('/chefs', function(req, res, next) {
