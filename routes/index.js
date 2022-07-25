@@ -42,17 +42,9 @@ router.get('/ingredientes/*', function(req, res, next) {
 /* GET recetas page. */
 router.get('/recetas', receta.list);
 
-/* GET chefs page. */
-router.get('/chefs', function(req, res, next) {
-  res.render('chefs');
-});
 
-
-/* GET paginas de ingredientes. */
-router.get('/receta/*', function(req, res, next) {
-  console.log('ruta:', req.path);
-  res.send('Pagina de la receta: '+req.path);
-});
+/* GET pagina de una receta. */
+router.get('/receta/*', receta.show);
 
 
 /* GET login page. */
