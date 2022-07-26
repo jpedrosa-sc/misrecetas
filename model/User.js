@@ -1,8 +1,10 @@
 let User = {}
 
+
+// Retorna el uid si existe, o false en caso contrario
 User.auth = function(email, password){
     if(email == 'jacobo@somoscoders.org' && password == 'somoscoders'){
-        return true;
+        return 26;
     }else{
         return false;
     }

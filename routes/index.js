@@ -53,4 +53,13 @@ router.get('/login', function(req, res, next) {
 });
 
 
+router.get('/set-cookie', function(req, res, next) {
+  res.cookie('nombre-usuario', 'Sebastian', 60000).send("cookie definida");
+});
+
+router.get('/get-cookies', function(req, res, next) {
+  console.log(req.cookies['nombre-usuario']);
+  res.send('recogiendo cookies');
+});
+
 module.exports = router;

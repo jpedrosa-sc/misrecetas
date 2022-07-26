@@ -14,7 +14,8 @@ authController.login = function(req, res, next){
     let password = req.body.password;
     console.log(email,password);
     
-    if(User.auth(email, password)){
+    let uid = User.auth(email, password);
+    if(uid){
         res.send('logged');
     }else{
         res.send('not logged');
